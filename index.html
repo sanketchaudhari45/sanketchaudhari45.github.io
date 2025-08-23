@@ -6,7 +6,7 @@
     <title>Sanket Chaudhari - DevOps Engineer Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Dancing+Script:wght@400;500;600;700&display=swap');
         
         * {
             font-family: 'Inter', sans-serif;
@@ -69,6 +69,50 @@
         @keyframes blink-caret {
             from, to { border-color: transparent }
             50% { border-color: #4f46e5; }
+        }
+
+        /* Advanced Title Animations */
+        .advanced-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .advanced-title::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+            border-radius: 20px;
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes titleGlow {
+            0%, 100% { opacity: 0; transform: scale(0.95); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        
+        .decorative-line {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .decorative-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, currentColor, transparent);
+            animation: lineSlide 2s ease-in-out infinite;
+        }
+        
+        @keyframes lineSlide {
+            0% { left: -100%; }
+            100% { left: 100%; }
         }
     </style>
 </head>
@@ -418,7 +462,22 @@
     <!-- Education Section -->
     <section id="education" class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Education</h2>
+            <div class="text-center mb-16">
+                <div class="inline-block relative advanced-title">
+                    <h2 class="text-5xl md:text-6xl font-black bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent mb-4 tracking-tight">
+                        Education
+                    </h2>
+                    <div class="absolute -top-2 -left-2 w-full h-full bg-gradient-to-r from-indigo-200/30 via-purple-200/30 to-cyan-200/30 blur-xl -z-10 rounded-lg"></div>
+                </div>
+                <div class="flex items-center justify-center space-x-4 mt-6">
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-transparent to-indigo-500 decorative-line"></div>
+                    <div class="w-3 h-3 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full animate-pulse"></div>
+                    <div class="w-24 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-600 to-cyan-600 decorative-line"></div>
+                    <div class="w-3 h-3 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-cyan-600 to-transparent decorative-line"></div>
+                </div>
+                <p class="text-gray-600 mt-4 text-lg font-medium">Academic Foundation & Learning Journey</p>
+            </div>
             <div class="max-w-4xl mx-auto">
                 <div class="bg-gradient-to-r from-indigo-500 to-purple-600 p-8 rounded-xl text-white card-hover">
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
@@ -443,7 +502,22 @@
     <!-- Experience Section -->
     <section id="experience" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Work Experience</h2>
+            <div class="text-center mb-16">
+                <div class="inline-block relative advanced-title">
+                    <h2 class="text-5xl md:text-6xl font-black bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-600 bg-clip-text text-transparent mb-4 tracking-tight">
+                        Work Experience
+                    </h2>
+                    <div class="absolute -top-2 -left-2 w-full h-full bg-gradient-to-r from-emerald-200/30 via-blue-200/30 to-purple-200/30 blur-xl -z-10 rounded-lg"></div>
+                </div>
+                <div class="flex items-center justify-center space-x-4 mt-6">
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-transparent to-emerald-500 decorative-line"></div>
+                    <div class="w-3 h-3 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full animate-pulse"></div>
+                    <div class="w-24 h-0.5 bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 decorative-line"></div>
+                    <div class="w-3 h-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-purple-600 to-transparent decorative-line"></div>
+                </div>
+                <p class="text-gray-600 mt-4 text-lg font-medium">Professional Journey & Career Milestones</p>
+            </div>
             <div class="space-y-8">
                 <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-8 rounded-xl shadow-lg card-hover text-white">
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
@@ -530,7 +604,22 @@
     <!-- Skills Section -->
     <section id="skills" class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Technical Skills</h2>
+            <div class="text-center mb-16">
+                <div class="inline-block relative advanced-title">
+                    <h2 class="text-5xl md:text-6xl font-black bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent mb-4 tracking-tight">
+                        Technical Skills
+                    </h2>
+                    <div class="absolute -top-2 -left-2 w-full h-full bg-gradient-to-r from-orange-200/30 via-red-200/30 to-pink-200/30 blur-xl -z-10 rounded-lg"></div>
+                </div>
+                <div class="flex items-center justify-center space-x-4 mt-6">
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-transparent to-orange-500 decorative-line"></div>
+                    <div class="w-3 h-3 bg-gradient-to-r from-orange-500 to-red-600 rounded-full animate-pulse"></div>
+                    <div class="w-24 h-0.5 bg-gradient-to-r from-orange-500 via-red-600 to-pink-600 decorative-line"></div>
+                    <div class="w-3 h-3 bg-gradient-to-r from-red-600 to-pink-600 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-pink-600 to-transparent decorative-line"></div>
+                </div>
+                <p class="text-gray-600 mt-4 text-lg font-medium">DevOps Expertise & Technology Stack</p>
+            </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-xl shadow-sm">
                     <h3 class="text-lg font-semibold mb-4 text-gray-900">Cloud & DevOps</h3>
@@ -736,7 +825,22 @@
     <!-- Projects Section -->
     <section id="projects" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Featured Projects</h2>
+            <div class="text-center mb-16">
+                <div class="inline-block relative advanced-title">
+                    <h2 class="text-5xl md:text-6xl font-black bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent mb-4 tracking-tight">
+                        Featured Projects
+                    </h2>
+                    <div class="absolute -top-2 -left-2 w-full h-full bg-gradient-to-r from-teal-200/30 via-cyan-200/30 to-blue-200/30 blur-xl -z-10 rounded-lg"></div>
+                </div>
+                <div class="flex items-center justify-center space-x-4 mt-6">
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-transparent to-teal-500 decorative-line"></div>
+                    <div class="w-3 h-3 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full animate-pulse"></div>
+                    <div class="w-24 h-0.5 bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600 decorative-line"></div>
+                    <div class="w-3 h-3 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-blue-600 to-transparent decorative-line"></div>
+                </div>
+                <p class="text-gray-600 mt-4 text-lg font-medium">Innovation & Technical Achievements</p>
+            </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl shadow-lg overflow-hidden card-hover">
                     <div class="p-8 text-white">
@@ -871,7 +975,22 @@
     <!-- Certifications Section -->
     <section id="certifications" class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Certifications & Activities</h2>
+            <div class="text-center mb-16">
+                <div class="inline-block relative advanced-title">
+                    <h2 class="text-5xl md:text-6xl font-black bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent mb-4 tracking-tight">
+                        Certifications & Activities
+                    </h2>
+                    <div class="absolute -top-2 -left-2 w-full h-full bg-gradient-to-r from-violet-200/30 via-purple-200/30 to-fuchsia-200/30 blur-xl -z-10 rounded-lg"></div>
+                </div>
+                <div class="flex items-center justify-center space-x-4 mt-6">
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-transparent to-violet-500 decorative-line"></div>
+                    <div class="w-3 h-3 bg-gradient-to-r from-violet-500 to-purple-600 rounded-full animate-pulse"></div>
+                    <div class="w-24 h-0.5 bg-gradient-to-r from-violet-500 via-purple-600 to-fuchsia-600 decorative-line"></div>
+                    <div class="w-3 h-3 bg-gradient-to-r from-purple-600 to-fuchsia-600 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-fuchsia-600 to-transparent decorative-line"></div>
+                </div>
+                <p class="text-gray-600 mt-4 text-lg font-medium">Professional Development & Recognition</p>
+            </div>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
                     <div class="flex items-start space-x-4">
@@ -969,7 +1088,22 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Get In Touch</h2>
+            <div class="text-center mb-16">
+                <div class="inline-block relative advanced-title">
+                    <h2 class="text-5xl md:text-6xl font-black bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-4 tracking-tight">
+                        Get In Touch
+                    </h2>
+                    <div class="absolute -top-2 -left-2 w-full h-full bg-gradient-to-r from-rose-200/30 via-pink-200/30 to-purple-200/30 blur-xl -z-10 rounded-lg"></div>
+                </div>
+                <div class="flex items-center justify-center space-x-4 mt-6">
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-transparent to-rose-500 decorative-line"></div>
+                    <div class="w-3 h-3 bg-gradient-to-r from-rose-500 to-pink-600 rounded-full animate-pulse"></div>
+                    <div class="w-24 h-0.5 bg-gradient-to-r from-rose-500 via-pink-600 to-purple-600 decorative-line"></div>
+                    <div class="w-3 h-3 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-purple-600 to-transparent decorative-line"></div>
+                </div>
+                <p class="text-gray-600 mt-4 text-lg font-medium">Let's Connect & Collaborate</p>
+            </div>
             <div class="grid md:grid-cols-2 gap-12">
                 <div>
                     <h3 class="text-2xl font-semibold mb-6 text-gray-900">Let's Connect</h3>
@@ -1150,216 +1284,4 @@
         });
 
         // Mobile menu toggle with animation
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-            
-            // Animate menu button
-            const svg = this.querySelector('svg');
-            if (mobileMenu.classList.contains('hidden')) {
-                svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
-            } else {
-                svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
-            }
-        });
-
-        // Close mobile menu when clicking on links
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-                const svg = mobileMenuBtn.querySelector('svg');
-                svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
-            });
-        });
-
-        // Form submission handler
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = this.querySelector('input[type="text"]').value;
-            const email = this.querySelector('input[type="email"]').value;
-            const subject = this.querySelector('select').value;
-            const message = this.querySelector('textarea').value;
-            
-            if (name && email && message) {
-                // Show success message
-                const button = this.querySelector('button[type="submit"]');
-                const originalText = button.textContent;
-                button.textContent = 'Message Sent! ✓';
-                button.classList.add('bg-green-600');
-                button.classList.remove('bg-indigo-600');
-                
-                // Reset after 3 seconds
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.classList.remove('bg-green-600');
-                    button.classList.add('bg-indigo-600');
-                    this.reset();
-                }, 3000);
-            } else {
-                alert('Please fill in all required fields.');
-            }
-        });
-
-        // Enhanced navbar with scroll effects
-        window.addEventListener('scroll', function() {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-xl');
-                nav.classList.remove('shadow-lg');
-            } else {
-                nav.classList.remove('shadow-xl');
-                nav.classList.add('shadow-lg');
-            }
-            
-            // Update active navigation
-            updateActiveNavLink();
-        });
-
-        // Animate skill bars on scroll with stagger effect
-        const observerOptions = {
-            threshold: 0.3,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const skillBars = entry.target.querySelectorAll('.skill-bar');
-                    skillBars.forEach((bar, index) => {
-                        setTimeout(() => {
-                            bar.style.animation = 'fillBar 2s ease-out';
-                        }, index * 100);
-                    });
-                }
-            });
-        }, observerOptions);
-
-        // Animate cards on scroll
-        const cardObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        // Initialize when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Observe skills section
-            const skillsSection = document.getElementById('skills');
-            if (skillsSection) {
-                observer.observe(skillsSection);
-            }
-
-            // Observe cards for animation
-            document.querySelectorAll('.card-hover').forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                cardObserver.observe(card);
-            });
-
-            // Initialize active nav state
-            updateActiveNavLink();
-            
-            // Initialize scroll animations
-            initializeAnimations();
-        });
-
-        // Add typing effect to hero subtitle
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        // Initialize typing effect
-        window.addEventListener('load', function() {
-            const subtitle = document.querySelector('.typewriter');
-            if (subtitle) {
-                const text = subtitle.textContent;
-                typeWriter(subtitle, text, 50);
-            }
-        });
-
-        // Add smooth hover effects for project cards
-        document.querySelectorAll('.card-hover').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Enhanced parallax effect with proper performance
-        let ticking = false;
-        
-        function updateParallax() {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.parallax-bg');
-            
-            parallaxElements.forEach((element) => {
-                const speed = parseFloat(element.dataset.speed) || 0.5;
-                const yPos = -(scrolled * speed);
-                element.style.transform = `translateY(${yPos}px)`;
-            });
-            
-            ticking = false;
-        }
-        
-        function requestTick() {
-            if (!ticking) {
-                requestAnimationFrame(updateParallax);
-                ticking = true;
-            }
-        }
-        
-        // Professional scroll animations
-        const animationObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-        
-        // Initialize animations on page load
-        function initializeAnimations() {
-            // Animate hero elements immediately
-            const heroElements = document.querySelectorAll('#home .scale-in, #home .fade-in-up, #home .fade-in-left, #home .fade-in-right');
-            heroElements.forEach((element, index) => {
-                setTimeout(() => {
-                    element.classList.add('animate');
-                }, index * 100);
-            });
-            
-            // Observe other sections for scroll animations
-            const animatedElements = document.querySelectorAll('.fade-in-up:not(#home .fade-in-up), .fade-in-left:not(#home .fade-in-left), .fade-in-right:not(#home .fade-in-right), .scale-in:not(#home .scale-in)');
-            animatedElements.forEach(element => {
-                animationObserver.observe(element);
-            });
-        }
-        
-        window.addEventListener('scroll', requestTick);
-    </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'973971bd5414cd03',t:'MTc1NTkzOTg4Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
+        <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'973a6d7c072fa6ed',t:'MTc1NTk1MDE5Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
