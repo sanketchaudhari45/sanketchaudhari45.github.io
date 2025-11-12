@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanket Chaudhari - DevOps Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .devops-logo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: 2px;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(100,116,139,0.1);
+        }
+
+        .dark .card-hover:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-color: rgba(250, 204, 21, 0.5);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: linear-gradient(90deg, #10b981, #0d9488);
+            border-radius: 4px;
+            animation: fillBar 2s ease-out forwards;
+        }
+
+        .dark .skill-bar {
+             background: linear-gradient(90deg, #facc15, #f97316);
+        }
+        
+        @keyframes fillBar {
+            from { width: 0%; }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #059669;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        .dark .typewriter {
+            border-right-color: #facc15;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #059669; }
+        }
+
+        .dark @keyframes blink-caret {
+            50% { border-color: #facc15; }
+        }
+
+        .advanced-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .advanced-title::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, transparent, rgba(16, 185, 129, 0.1), transparent);
+            border-radius: 20px;
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        .dark .advanced-title::before {
+            background: linear-gradient(45deg, transparent, rgba(250, 204, 21, 0.1), transparent);
+        }
+        
+        @keyframes titleGlow {
+            0%, 100% { opacity: 0; transform: scale(0.95); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        
+        .decorative-line {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .decorative-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, currentColor, transparent);
+            animation: lineSlide 2s ease-in-out infinite;
+        }
+        
+        @keyframes lineSlide {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .theme-transition-active {
+            animation: reveal 0.6s ease-in-out forwards;
+        }
+        
+        @keyframes reveal {
+            from {
+                clip-path: circle(0% at var(--x) var(--y));
+            }
+            to {
+                clip-path: circle(150% at var(--x) var(--y));
+            }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-stone-100 dark:bg-zinc-900 transition-colors duration-300">
+    <div id="root"></div>
+    <script>
+      // Avoids flash of unstyled content (FOUC) for dark mode
+      (function() {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
