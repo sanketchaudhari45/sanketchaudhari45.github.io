@@ -29,7 +29,7 @@
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(100,116,139,0.1);
         }
-
+        
         .dark .card-hover:hover {
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             border-color: rgba(250, 204, 21, 0.5);
@@ -41,7 +41,7 @@
             border-radius: 4px;
             animation: fillBar 2s ease-out forwards;
         }
-
+        
         .dark .skill-bar {
              background: linear-gradient(90deg, #facc15, #f97316);
         }
@@ -71,7 +71,7 @@
         .dark .typewriter {
             border-right-color: #facc15;
         }
-
+        
         @keyframes typing {
             from { width: 0 }
             to { width: 100% }
@@ -81,11 +81,11 @@
             from, to { border-color: transparent }
             50% { border-color: #059669; }
         }
-
+        
         .dark @keyframes blink-caret {
             50% { border-color: #facc15; }
         }
-
+        
         .advanced-title {
             position: relative;
             display: inline-block;
@@ -102,7 +102,7 @@
             border-radius: 20px;
             animation: titleGlow 3s ease-in-out infinite;
         }
-
+        
         .dark .advanced-title::before {
             background: linear-gradient(45deg, transparent, rgba(250, 204, 21, 0.1), transparent);
         }
@@ -132,7 +132,7 @@
             0% { left: -100%; }
             100% { left: 100%; }
         }
-
+        
         .theme-transition-active {
             animation: reveal 0.6s ease-in-out forwards;
         }
@@ -146,16 +146,18 @@
             }
         }
     </style>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script type="importmap">
-    {
-      "imports": {
-        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-        "react/": "https://aistudiocdn.com/react@^19.2.0/",
-        "react": "https://aistudiocdn.com/react@^19.2.0"
-      }
-    }
-    </script>
+
+<link rel="stylesheet" href="/index.css">
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-BvT9Eir9.js"></script>
 </head>
 <body class="bg-stone-100 dark:bg-zinc-900 transition-colors duration-300">
     <div id="root"></div>
@@ -169,6 +171,5 @@
         }
       })();
     </script>
-    <script type="text/babel" data-presets="react,typescript" data-type="module" src="./index.tsx"></script>
 </body>
 </html>
