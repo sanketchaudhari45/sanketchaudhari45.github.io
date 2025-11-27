@@ -1,175 +1,130 @@
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sanket Chaudhari - DevOps Engineer Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236366f1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 12c-2-2.3-4.5-4-7-4a5 5 0 0 0 0 10c2.5 0 5-1.7 7-4 2 2.3 4.5 4 7 4a5 5 0 0 0 0-10c-2.5 0-5 1.7-7 4Z'/%3E%3C/svg%3E" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              primary: '#4f46e5', // Indigo-600
+              secondary: '#9333ea', // Purple-600
+              dark: '#0F172A',
+              card: '#1E293B',
+              light: '#f8fafc',
+              'light-card': '#ffffff',
+            },
+            animation: {
+              'blob': 'blob 20s infinite', // Slow smooth movement
+              'shine': 'shine 1s',
+              'gradient-x': 'gradient-x 3s ease infinite',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 8s ease-in-out infinite',
+              'float-reverse': 'float-reverse 10s ease-in-out infinite',
+            },
+            keyframes: {
+              blob: {
+                // translate3d forces GPU acceleration
+                '0%': { transform: 'translate3d(0px, 0px, 0px) scale(1)' },
+                '33%': { transform: 'translate3d(30px, -50px, 0px) scale(1.1)' },
+                '66%': { transform: 'translate3d(-20px, 20px, 0px) scale(0.9)' },
+                '100%': { transform: 'translate3d(0px, 0px, 0px) scale(1)' },
+              },
+              shine: {
+                '100%': { left: '125%' },
+              },
+              'gradient-x': {
+                '0%, 100%': {
+                    'background-size': '200% 200%',
+                    'background-position': 'left center'
+                },
+                '50%': {
+                    'background-size': '200% 200%',
+                    'background-position': 'right center'
+                },
+              },
+              float: {
+                '0%, 100%': { transform: 'translate3d(0, 0, 0)' },
+                '50%': { transform: 'translate3d(0, -20px, 0)' },
+              },
+              'float-reverse': {
+                '0%, 100%': { transform: 'translate3d(0, 0, 0)' },
+                '50%': { transform: 'translate3d(0, 20px, 0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-        
-        * {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        .devops-logo {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            letter-spacing: 2px;
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(100,116,139,0.1);
-        }
-        
-        .dark .card-hover:hover {
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            border-color: rgba(250, 204, 21, 0.5);
-        }
-        
-        .skill-bar {
-            height: 8px;
-            background: linear-gradient(90deg, #10b981, #0d9488);
-            border-radius: 4px;
-            animation: fillBar 2s ease-out forwards;
-        }
-        
-        .dark .skill-bar {
-             background: linear-gradient(90deg, #facc15, #f97316);
-        }
-        
-        @keyframes fillBar {
-            from { width: 0%; }
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        .typewriter {
-            overflow: hidden;
-            border-right: .15em solid #059669;
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .15em;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-        }
-        
-        .dark .typewriter {
-            border-right-color: #facc15;
-        }
-        
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #059669; }
-        }
-        
-        .dark @keyframes blink-caret {
-            50% { border-color: #facc15; }
-        }
-        
-        .advanced-title {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .advanced-title::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background: linear-gradient(45deg, transparent, rgba(16, 185, 129, 0.1), transparent);
-            border-radius: 20px;
-            animation: titleGlow 3s ease-in-out infinite;
-        }
-        
-        .dark .advanced-title::before {
-            background: linear-gradient(45deg, transparent, rgba(250, 204, 21, 0.1), transparent);
-        }
-        
-        @keyframes titleGlow {
-            0%, 100% { opacity: 0; transform: scale(0.95); }
-            50% { opacity: 1; transform: scale(1.05); }
-        }
-        
-        .decorative-line {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .decorative-line::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: -100%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, currentColor, transparent);
-            animation: lineSlide 2s ease-in-out infinite;
-        }
-        
-        @keyframes lineSlide {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-        
-        .theme-transition-active {
-            animation: reveal 0.6s ease-in-out forwards;
-        }
-        
-        @keyframes reveal {
-            from {
-                clip-path: circle(0% at var(--x) var(--y));
-            }
-            to {
-                clip-path: circle(150% at var(--x) var(--y));
-            }
-        }
+      body {
+        transition: background-color 0.3s ease, color 0.3s ease;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem; /* Offset for fixed navbar */
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #475569; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #64748b; 
+      }
+      
+      .gradient-text {
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-image: linear-gradient(to right, #4f46e5, #9333ea, #06b6d4);
+      }
+
+      /* High Performance GPU Acceleration Utility */
+      .gpu-accelerated {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+        will-change: transform, opacity;
+      }
     </style>
 
 <link rel="stylesheet" href="/index.css">
-<script type="importmap">
+  <script type="importmap">
 {
   "imports": {
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0"
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
   }
 }
 </script>
-  <script type="module" crossorigin src="/assets/index-BvT9Eir9.js"></script>
+  <script type="module" crossorigin src="/assets/index-C6zGMdnb.js"></script>
 </head>
-<body class="bg-stone-100 dark:bg-zinc-900 transition-colors duration-300">
+  <body class="bg-light dark:bg-dark text-slate-900 dark:text-slate-100">
     <div id="root"></div>
-    <script>
-      // Avoids flash of unstyled content (FOUC) for dark mode
-      (function() {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
-      })();
-    </script>
 </body>
 </html>
